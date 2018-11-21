@@ -6,6 +6,9 @@ import com.example.activeCampaignApiSpringBoot.model.contact.ContactContainer;
 import com.example.activeCampaignApiSpringBoot.model.response.Response;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +29,7 @@ public class DemoApplication {
 
 	@PostMapping("/createorupdatecontact")
 	@ResponseBody
-	Response createorupdatecontact(@RequestBody ContactContainer contact) {
+	ResponseEntity createorupdatecontact(@RequestBody ContactContainer contact) {
 		Http http = new Http();
 		Response response =  new Response(200, "OK");
 		try {
@@ -37,7 +40,11 @@ public class DemoApplication {
 			response.setStatusCode(500);
 			response.setResponse(e.getMessage());
 		}
-		return response;
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.set("Access-Control-Allow-Origin", "https://kurstestowania.pl/");
+		responseHeaders.set("Access-Control-Allow-Origin", "http://localhost:3000/");
+		return new ResponseEntity<String>(response.getResponse(), responseHeaders, HttpStatus.CREATED);
+
 	}
 
 	public static void main(String[] args) {
