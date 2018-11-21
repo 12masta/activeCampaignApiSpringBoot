@@ -17,6 +17,7 @@ import java.io.IOException;
 
 @RestController
 @SpringBootApplication
+@CrossOrigin
 public class DemoApplication {
 
     @RequestMapping("/")
