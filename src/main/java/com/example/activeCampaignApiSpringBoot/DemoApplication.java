@@ -17,7 +17,7 @@ import java.io.IOException;
 
 @RestController
 @SpringBootApplication
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class DemoApplication {
 
     @RequestMapping("/")
@@ -27,7 +27,7 @@ public class DemoApplication {
     }
 
     @PostMapping("/createorupdatecontact")
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @ResponseBody
     Response createorupdatecontact(@RequestBody ContactContainer contact) {
         Http http = new Http();
