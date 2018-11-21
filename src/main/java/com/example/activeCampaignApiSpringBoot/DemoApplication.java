@@ -41,8 +41,9 @@ public class DemoApplication {
 			response.setResponse(e.getMessage());
 		}
 		HttpHeaders responseHeaders = new HttpHeaders();
-		responseHeaders.set("Access-Control-Allow-Origin", "https://kurstestowania.pl/");
-		responseHeaders.set("Access-Control-Allow-Origin", "http://localhost:3000/");
+		responseHeaders.set("Access-Control-Allow-Origin", "https://kurstestowania.pl");
+		responseHeaders.set("Access-Control-Allow-Origin", "https://www.kurstestowania.pl");
+		responseHeaders.set("Access-Control-Allow-Origin", "http://localhost:3000");
 		return new ResponseEntity<String>(response.getResponse(), responseHeaders, HttpStatus.CREATED);
 
 	}
