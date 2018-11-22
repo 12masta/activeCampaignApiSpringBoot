@@ -17,7 +17,6 @@ import java.io.IOException;
 
 @RestController
 @SpringBootApplication
-@CrossOrigin(origins = "*")
 public class DemoApplication {
 
     @RequestMapping("/")
@@ -27,14 +26,14 @@ public class DemoApplication {
     }
 
     @PostMapping("/createorupdatecontact")
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http://localhost:3000", "https://kurstestowania.pl/", "https://www.kurstestowania.pl/"})
     @ResponseBody
     Response createorupdatecontact(@RequestBody ContactContainer contact) {
         Http http = new Http();
         Response response = new Response(200, "OK");
         try {
             okhttp3.Response okHttpResponse = http.post("https://marcinstanek.api-us1.com/api/3/contact/sync", JsonConverter.toJsonString(contact));
-            response.setResponse(okHttpResponse.message().toString());
+            response.setResponse(okHttpResponse.message());
             response.setStatusCode(okHttpResponse.code());
         } catch (IOException e) {
             response.setStatusCode(500);
