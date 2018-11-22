@@ -26,7 +26,7 @@ public class DemoApplication {
     }
 
     @PostMapping("/createorupdatecontact")
-    @CrossOrigin(origins = {"http://localhost:3000", "https://kurstestowania.pl/", "https://www.kurstestowania.pl/"})
+    @CrossOrigin(origins = {"http://localhost:3000", "https://kurstestowania.pl", "https://www.kurstestowania.pl"})
     @ResponseBody
     Response createorupdatecontact(@RequestBody ContactContainer contact) {
         Http http = new Http();
