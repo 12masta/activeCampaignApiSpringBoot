@@ -2,7 +2,7 @@ package com.example.activeCampaignApiSpringBoot;
 
 import com.example.activeCampaignApiSpringBoot.convert.JsonConverter;
 import com.example.activeCampaignApiSpringBoot.http.Http;
-import com.example.activeCampaignApiSpringBoot.model.contact.ContactContainer;
+import com.example.activeCampaignApiSpringBoot.model.contact.request.ContactContainer;
 import com.example.activeCampaignApiSpringBoot.model.response.Response;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

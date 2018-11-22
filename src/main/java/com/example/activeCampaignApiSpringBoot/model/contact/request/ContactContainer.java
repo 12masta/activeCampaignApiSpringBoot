@@ -1,4 +1,4 @@
-package com.example.activeCampaignApiSpringBoot.model.contact;
+package com.example.activeCampaignApiSpringBoot.model.contact.request;
 
 import java.util.HashMap;
 import java.util.Map;
