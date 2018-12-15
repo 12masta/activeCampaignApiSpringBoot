@@ -26,7 +26,7 @@ public class DemoApplication {
     @RequestMapping("/")
     @ResponseBody
     Response home() {
-        return new Response(200, "Hello World!!");
+        return new Response(200, "Hello World v1.1!!");
     }
 
     @PostMapping("/createorupdatecontact")
