@@ -17,3 +17,6 @@ To make it work you need to have api.json file in resources folder. File has fol
 
     heroku open
     
+## Heroku deploy with mvn plugin
+
+    mvn clean heroku:deploy
